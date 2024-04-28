@@ -1,27 +1,54 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+  --background: transparent; /* Hacemos que el fondo del ion-content sea transparente */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  transition: background-color 0.5s ease-in-out; /* Transición suave para el cambio de fondo */
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.day {
+  background-color: #0a94ca; /* Azul claro */
 }
 
-#container a {
-  text-decoration: none;
+.night {
+  background-color: #011030; /* Negro */
+}
+
+.icon {
+  font-size: 10rem;
+  color: yellow; /* Color amarillo para el sol */
+}
+
+.day .icon {
+  color: #ffd900; /* Color blanco para la luna durante el día */
+}
+
+.night .icon {
+  color: #FFF; /* Color blanco para la luna durante la noche */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeInOut {
+  animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out;
 }
